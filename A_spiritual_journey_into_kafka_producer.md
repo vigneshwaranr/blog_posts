@@ -13,7 +13,7 @@ This article is for those who are already familiar with Kafka and doesn't mind d
 I’ll be referring Kafka Producer v1.1 (only the idempotent producer mode) for this article.
 
 
-## Alright, lets start our journey on Kafka Producer!
+### Alright, lets start our journey on Kafka Producer!
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level1.png)
 
@@ -48,7 +48,7 @@ A brief overview about the essential components:
 * *[Sender](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/Sender.java)* / *[KafkaThread](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java#L446)* - Runnable thread that runs forever and polls the data buffers from *RecordAccumulator* and uses *NetworkClient* to send it over to the brokers
 
 
-## Ermm.. .. Okay..
+### Ermm.. .. Okay..
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level2.png)
 
 That was a good overview. But let me walk you through the code starting from _[KafkaProducer#send()](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java#L790)_ method which is like the main() method of Kafka Producer. Let me screenshot some code so you don't have to jump between tabs.
@@ -80,6 +80,6 @@ That was a good overview. But let me walk you through the code starting from _[K
 * Passes that and the serialized data to the *RecordAccumulator* and returns a *Future* that will by completed by the *Sender* when it sends over the *ProducerBatch* containing this *ProducerRecord* (and many other records) to the brokers and receives back the response.
 
 
-## That's Awesome! Can you explain more on how the accumulator thing works?
+### That's Awesome! Can you explain more on how the accumulator thing works?
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level3.png)
