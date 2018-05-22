@@ -25,9 +25,9 @@ A brief overview about the essential components:
 
 * *[KafkaProducer](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java)* - The thread-safe boss class that loads up your configs and instantiates all other components. You will call its *send* method to send the *ProducerRecord* over to the Kafka servers.
 
-* *[ProducerRecord](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/ProducerRecord.java)* - A POJO that specifies the data to be sent (key, value, timestamp and headers), name of the topic to be sent to and optionally the partition id (if you need to specify which partition it should go to)
+* *[ProducerRecord](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/ProducerRecord.java)* - A POJO that specifies the data to be sent (key, value, timestamp and headers), name of the topic this record should go to and optionally the partition id (if you need to explicitly specify which partition it should go to)
 
-* *[Partitioner](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/Partitioner.java)* - If you don't explicitly specify the partition id in the *ProducerRecord*, then this class determines which record can go to which partition. If you haven't configured your own *Partitioner* using *partitioner.class*, then the [default implementation](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/DefaultPartitioner.java) will be used. More on this later.
+* *[Partitioner](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/Partitioner.java)* - If you don't explicitly specify the partition id in the *ProducerRecord*, then this class will determine which record will go to which partition. If you haven't configured your own *Partitioner* using *partitioner.class*, then the [default implementation](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/DefaultPartitioner.java) will be used. More on this later.
 
 * *[Metadata](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/Metadata.java)* / *[Cluster](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/common/Cluster.java)* - These guys store the metadata info about the available topics and their partition counts, number of Kafka Broker nodes and which node is leader for which *[TopicPartition](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/common/TopicPartition.java)* (a POJO that uniquely identifies a partition of a topic). They have the methods to fetch these info from the brokers as well.
 
@@ -51,7 +51,7 @@ A brief overview about the essential components:
 ### Ermm.. .. Okay..
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level2.png)
 
-What I listed above covers almost everything. But if you like more details, follow me while I walk you through the code starting from _[KafkaProducer#send()](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java#L790)_ method which is like the main() method of Kafka Producer. Let me screenshot some code so you don't have to jump between tabs.
+What I listed above covers almost everything to start digging yourself. But if you need guidance, continue with me while I walk you through the code starting from _[KafkaProducer#send()](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java#L790)_ method which is like the main() method of Kafka Producer. Let me screenshot some code so you don't have to jump between tabs.
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/doSend1.png)
 
@@ -69,19 +69,21 @@ What I listed above covers almost everything. But if you like more details, foll
 
 * Then it finds out which partition of the topic this data should go to.
   * If the partition id is explicitly specified, it is used.
-  * Otherwise if a custom partitioner is used, that is used to find the partition id.
-  * If one is not configured, the *[default partitioner](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/DefaultPartitioner.java#L54)* is used. If a key is provided, the partition will be chosen based on hashing of the key. (Skewing can happen if the keys are not evenly distributed). Otherwise it does round robin.
+  * Otherwise if your custom partitioner is configured, that is used to find the partition id.
+  * If one is not configured, the *[default partitioner](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/DefaultPartitioner.java#L54)* is used. 
+    - If a key is provided, the partition will be chosen by the default partitioner based on hashing the key. (Note that if the keys are not evenly distributed, skewing can happen where some partitions receive more data than others). 
+    - If a key is not provided, the default partitioner chooses one among the partitions in a round robin manner.
 
 * Now that it knows which partition to send the data to, it creates the *TopicPartition* POJO.
 
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/doSend3.png)
 
-* Passes that and the serialized data to the *RecordAccumulator* and returns a *Future* that will by completed by the *Sender* when it sends over the *ProducerBatch* containing this *ProducerRecord* (and many other records) to the brokers and receives back the response.
+* Passes that and the serialized data to the *RecordAccumulator* and returns a *Future* which will by completed by the *Sender* when it sends over the *ProducerBatch* containing this *ProducerRecord* (and many other records) to the brokers and receives back the response.
 
 
 ### That's Awesome! Can you explain more on how the accumulator thing works?
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level3.png)
 
-We shall discuss about that and how to configure *batch.size* and *linger.ms* on high scale or high latency. Stay tuned!
+We shall discuss about that and how to configure *batch.size* and *linger.ms* on different situations. Stay tuned!
