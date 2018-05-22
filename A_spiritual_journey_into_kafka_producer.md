@@ -1,4 +1,4 @@
-# A spiritual journey of digging down KafkaProducer
+# A spiritual journey of digging into KafkaProducer
 
 Hi. In this post, I am going to walk you through the Kafka Producer source code and share my knowledge on the Producer Architecture.
 
@@ -6,16 +6,18 @@ I couldn’t find any such article about Kafka Producer Architecture till date a
 a recent tech discussion about Kafka at my workplace triggered the motivation to write this.
 
 **Note**: I'm going to focus only on internal implementation of Kafka Producer so if you have no idea about what is Kafka at all, 
-this article is **not for you**! 
+this article is **not for you**! You might want to start here -> https://kafka.apache.org/intro
 
 This article is for those who are already familiar with Kafka and doesn't mind digging into the details. 
 
 I’ll be referring Kafka Producer v1.1 (only the idempotent producer mode) for this article.
 
+
 ## Alright, lets start our journey on Kafka Producer!
+
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level1.png)
 
-It’d help if you check out&nbsp;[https://github.com/apache/kafka/tree/1.1](https://github.com/apache/kafka/tree/1.1)&nbsp;and use your IDE’s _⌘+Click_ or _Ctrl+Click_ to follow along.
+It’d help if you could check out&nbsp;[https://github.com/apache/kafka/tree/1.1](https://github.com/apache/kafka/tree/1.1)&nbsp;and use your IDE’s _⌘+Click_ or _Ctrl+Click_ to follow along.
 
 A brief overview about the essential components:
 
