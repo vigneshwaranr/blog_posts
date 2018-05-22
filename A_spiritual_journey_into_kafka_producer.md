@@ -27,7 +27,7 @@ A brief overview about the essential components:
 
 * *[ProducerRecord](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/ProducerRecord.java)* - A POJO that specifies the data to be sent (key, value, timestamp and headers), name of the topic to be sent to and optionally the partition id (if you need to specify which partition it should go to)
 
-* *[Partitioner](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/Partitioner.java)* - If you don't explicitly specify the partition id in the *ProducerRecord*, then this class determines which record can go to which partition. If you haven't configured your own *Partitioner* using *partitioner.class*, then the [default round robin one](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/DefaultPartitioner.java) will be used.
+* *[Partitioner](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/Partitioner.java)* - If you don't explicitly specify the partition id in the *ProducerRecord*, then this class determines which record can go to which partition. If you haven't configured your own *Partitioner* using *partitioner.class*, then the [default implementation](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/DefaultPartitioner.java) will be used. More on this later.
 
 * *[Metadata](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/Metadata.java)* / *[Cluster](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/common/Cluster.java)* - These guys store the metadata info about the available topics and their partition counts, number of Kafka Broker nodes and which node is leader for which *[TopicPartition](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/common/TopicPartition.java)* (a POJO that uniquely identifies a partition of a topic). They have the methods to fetch these info from the brokers as well.
 
@@ -64,4 +64,22 @@ That was a good overview. But let me walk you through the code starting from _[K
 
 * Then it serializes the key and value using the provided serializers or the default ones.
 
-* 
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/doSend2.png)
+
+* Then it finds out which partition of the topic this data should go to.
+  * If the partition id is explicitly specified, it is used.
+  * Otherwise if a custom partitioner is used, that is used to find the partition id.
+  * If one is not configured, the *[default partitioner](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/DefaultPartitioner.java#L54)* is used. If a key is provided, the partition will be chosen based on hashing of the key. (Skewing can happen if the keys are not evenly distributed). Otherwise it does round robin.
+
+* Now that it knows which partition to send the data to, it creates the *TopicPartition* POJO.
+
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/doSend3.png)
+
+* Passes that and the serialized data to the *RecordAccumulator* and returns a *Future* that will by completed by the *Sender* when it sends over the *ProducerBatch* containing this *ProducerRecord* (and many other records) to the brokers and receives back the response.
+
+
+## That's Awesome! Can you explain more on how the accumulator thing works?
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level3.png)
