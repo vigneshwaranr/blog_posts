@@ -21,11 +21,34 @@ It’d help if you could check out&nbsp;[https://github.com/apache/kafka/tree/1.
 
 A brief overview about the essential components:
 
-* 
+**Section A**
 
-*   The _RecordAccumulator_ will notify the _Sender_ to send the data soon (even before _linger.ms_&nbsp;is elapsed)&nbsp;if the configured _batch.size_&nbsp;-&nbsp; the maximum size for a _ByteBuffer_ is reached
+* *[KafkaProducer](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java)* - The thread-safe boss class that loads up your configs and instantiates all other components. You will call its *send* method to send the *ProducerRecord* over to the Kafka servers.
 
-## Umm..
+* *[ProducerRecord](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/ProducerRecord.java)* - A POJO that specifies the data to be sent (key, value, timestamp and headers), name of the topic to be sent to and optionally the partition id (if you need to specify which partition it should go to)
+
+* *[Partitioner](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/Partitioner.java)* - If you don't explicitly specify the partition id in the *ProducerRecord*, then this class determines which record can go to which partition. If you haven't configured your own *Partitioner* using *partitioner.class*, then the [default round robin one](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/DefaultPartitioner.java) will be used.
+
+* *[Metadata](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/Metadata.java)* / *[Cluster](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/common/Cluster.java)* - These guys store the metadata info about the available topics and their partition counts, number of Kafka Broker nodes and which node is leader for which *[TopicPartition](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/common/TopicPartition.java)* (a POJO that uniquely identifies a partition of a topic). They have the methods to fetch these info from the brokers as well.
+
+**Section B**
+
+* *[RecordAccumulator](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/RecordAccumulator.java#L81)* - This guy holds a *Queue* of *ProducerBatch*-es - one for each *TopicPartition* and also a *ByteBuffer* Pool. Whenever you call *KafkaProducer#send(ProducerRecord)*, they get accumulated here until they are sent over to the brokers when either
+  * batching time specified by *linger.ms* is elapsed, or
+  * configured *batch.size* is reached even before *linger.ms* is elapsed.
+
+  
+* *[ProducerBatch](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/ProducerBatch.java)* - Uses a *[MemoryRecordsBuilder](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/common/record/MemoryRecordsBuilder.java)* to handle compression and write the records into a *ByteBuffer* borrowed from the *BufferPool* in *RecordAccumulator*
+
+**Section C**
+
+
+* *[NetworkClient](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/NetworkClient.java)* - Uses Java NIO to send *ByteBuffer*-s of a particular *TopicPartition* to the right broker which is the leader of this *TopicPartition*
+
+* *[Sender](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/Sender.java)* / *[KafkaThread](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java#L446)* - Runnable thread that runs forever and polls the data buffers from *RecordAccumulator* and uses *NetworkClient* to send it over to the brokers
+
+
+## Ermm..
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level2.png)
 
 Let me walk you through the code starting from _[KafkaProducer#send()](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java#L790)_ method which is like the main() method of Kafka Producer.
