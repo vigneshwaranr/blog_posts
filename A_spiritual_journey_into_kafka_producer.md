@@ -17,7 +17,7 @@ I’ll be referring Kafka Producer v1.1 (only the idempotent producer mode) for 
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level1.png)
 
-It’d help if you could check out&nbsp;[https://github.com/apache/kafka/tree/1.1](https://github.com/apache/kafka/tree/1.1)&nbsp;and use your IDE’s _⌘+Click_ or _Ctrl+Click_ to follow along.
+It’d help if you could check out&nbsp;[https://github.com/apache/kafka/tree/1.1](https://github.com/apache/kafka/tree/1.1)&nbsp;and use your IDE’s _⌘+Click_ or _Ctrl+Click_ to follow me along. Or use the links to see the code directly in github.
 
 A brief overview about the essential components:
 
@@ -48,13 +48,20 @@ A brief overview about the essential components:
 * *[Sender](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/Sender.java)* / *[KafkaThread](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java#L446)* - Runnable thread that runs forever and polls the data buffers from *RecordAccumulator* and uses *NetworkClient* to send it over to the brokers
 
 
-## Ermm..
+## Ermm.. .. Okay..
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level2.png)
 
-Let me walk you through the code starting from _[KafkaProducer#send()](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java#L790)_ method which is like the main() method of Kafka Producer.
+That was a good overview. But let me walk you through the code starting from _[KafkaProducer#send()](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java#L790)_ method which is like the main() method of Kafka Producer. Let me screenshot some code so you don't have to jump between tabs.
 
-*   Whenever you call send, the first thing it does is making sure the metadata for that topic is available.> `ClusterAndWaitTime clusterAndWaitTime = waitOnMetadata(record.topic(), record.partition(), maxBlockTimeMs);`
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/doSend1.png)
 
-*   If the metadata for the topic already exists, the&nbsp;_[waitOnMetadata](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java#L888)_ returns immediately
+* Whenever you call send, the first thing it does is making sure the metadata for that topic is available.
 
-*   Otherwise it issues a blocking call to the Kafka Brokers to fetch and update the Metadata and Cluster info. The timeout for this blocking call is specified by&nbsp;_max.block.ms_
+
+* If the metadata for the topic already exists, the&nbsp;_[waitOnMetadata](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java#L888)_ returns immediately
+
+* Or if it is the very first send and it doesn't have metadata info yet, then it issues a blocking request to the Kafka Brokers to fetch and update the *Metadata* and *Cluster* instances. The timeout for this blocking call is specified by&nbsp;_max.block.ms_
+
+* Then it serializes the key and value using the provided serializers or the default ones.
+
+* 
