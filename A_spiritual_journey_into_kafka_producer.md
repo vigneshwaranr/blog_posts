@@ -51,7 +51,7 @@ A brief overview about the essential components:
 ### Ermm.. .. Okay..
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level2.png)
 
-That was a good overview. But let me walk you through the code starting from _[KafkaProducer#send()](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java#L790)_ method which is like the main() method of Kafka Producer. Let me screenshot some code so you don't have to jump between tabs.
+What I listed above covers almost everything. But if you like more details, follow me while I walk you through the code starting from _[KafkaProducer#send()](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java#L790)_ method which is like the main() method of Kafka Producer. Let me screenshot some code so you don't have to jump between tabs.
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/doSend1.png)
 
@@ -84,4 +84,4 @@ That was a good overview. But let me walk you through the code starting from _[K
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level3.png)
 
-Stay tuned!
+We shall discuss about that and how to configure *batch.size* and *linger.ms* on high scale or high latency. Stay tuned!
