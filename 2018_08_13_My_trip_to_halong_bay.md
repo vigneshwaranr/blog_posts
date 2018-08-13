@@ -4,6 +4,9 @@ I booked my flight tickets to Hanoi in scoot for August 9th and back on 12th. I 
 
 I booked a 2D1N trip with Stellar cruise through [halongbaytours.com](https://www.halongbaytours.com/cruise/oasis-bay-cruise.html#itinerary)&nbsp;online but they said it’s fully booked and gave me a more expensive Oasis Bay Cruise instead but it was worth it. The only mistake was to trying to enjoy this cruising alone without a partner :(
 
+---
+
+
 ## Day 1
 
 I landed in Hanoi airport and noticed that that airport was reminiscent of my hometown Madurai's airport. That was the start of me noticing the similarities between Hanoi and Madurai.
@@ -54,6 +57,9 @@ Similar counterpart in Madurai is the amazing [Theppakulam](https://www.tripadvi
 
 Then I drove around all night..
 
+---
+
+
 ## Day 2
 
 Had breakfast at the hotel and the agent from Halong Bay tours approached me to get the balance amount settled. Then after a while, a van from Oasis Bay cruise picked me up along with a lot of people.
@@ -79,11 +85,37 @@ With a balcony! 😱😱😱
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180810_131541.jpg)
 
-We went for a Kayaking through the Halong bay. Then some people went for swimming. I didn't after seeing some jelly fishes in the water (gulp).
+We started cruising towards Halong Bay.
 
-The sunset view aboard the sundeck was fantastic.
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180810_135247.jpg)
+
+And we were served amazing food throught the trip.
+
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180811_063153.jpg)
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180810_135321.jpg)
+
+
+Then I went for my first ever **Kayaking** attempt through the Halong bay and I did well. 
+
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/me_kayaking.png)
+
+
+Then some people went for swimming. I didn't after seeing some jelly fishes in the water (gulp).
+
+Then we relaxed with a nice sunset view aboard the sundeck. And it just got more dramatic as it got darker.
+
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180810_173031.jpg)
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180810_182738.jpg)
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/Screen_Shot_2018-08-13_at_7.13.57_PM.png)
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/Screen_Shot_2018-08-13_at_7.14.19_PM.png)
 
 Then went for early sleep with clock set to wake me up at 5:30
 
@@ -98,4 +130,7 @@ Then went for early sleep with clock set to wake me up at 5:30
 
 
 
-The food they served throughout the trip was very amazing. 
+This guy was nowhere in sight 😢
+
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/1490705536Kong-Skull-Island-Vietnam.png)
