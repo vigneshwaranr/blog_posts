@@ -9,9 +9,11 @@ I booked a 2D1N trip with Stellar cruise through [halongbaytours.com](https://ww
 
 ## Day 1
 
+
+
 I landed in Hanoi airport and noticed that that airport was reminiscent of my hometown Madurai's airport. That was the start of me noticing the similarities between Hanoi and Madurai.
 
-After I landed, the taxi from hotel took me to the hotel in Old Quarter in 40 mins. I realised that the speed limits in Vietnam were very low for safety reasons.
+After I landed, the taxi sent by hotel escorted me from Airport to the hotel in Old Quarter in 40 mins. I realised that the speed limits in Vietnam were very low for safety reasons.
 
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180809_144328.jpg)
@@ -19,7 +21,7 @@ After I landed, the taxi from hotel took me to the hotel in Old Quarter in 40 mi
 
 After checking in the hotel, the receptionist helped me rent an auto-gear bike for 150k VND with petrol for 50k VND and I started riding struggling to get used to right hand side driving. 
 
-They didn't hold my passport like they used to in Thailand and didn't even ask if I have a license. :D
+They didn't hold my passport like they used to in Thailand and didn't even ask if I had a license. :D
 
 This was my bike.. Not bad.
 
@@ -62,6 +64,8 @@ Then I drove around all night..
 
 ## Day 2
 
+
+
 Had breakfast at the hotel and the agent from Halong Bay tours approached me to get the balance amount settled. Then after a while, a van from Oasis Bay cruise picked me up along with a lot of people.
 
 It took 3.5 hours to get to the Halong harbour with 30mins break in the middle.
@@ -85,14 +89,14 @@ With a balcony! 😱😱😱
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180810_131541.jpg)
 
-But it's a good idea to stay 3D2N trip on such cabins.
+It's a better idea to do a 3D2N trip to fully enjoy such cabins.
 
 We started cruising towards Halong Bay.
 
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180810_135247.jpg)
 
-And we were served amazing food throught the trip.
+And we were served amazing food throughout the trip.
 
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180811_063153.jpg)
@@ -108,12 +112,15 @@ Then I went for my first ever **Kayaking** attempt through the Halong bay and I 
 
 Then some people went for swimming. I didn't after seeing some jelly fishes in the water (gulp).
 
-Then we relaxed with a nice sunset view aboard the sundeck. And it just got more dramatic as it got darker.
+Then we relaxed with a nice sunset view aboard the sundeck. 
 
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180810_173031.jpg)
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180810_182738.jpg)
+
+And it just got more dramatic as it got darker.
+
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/Screen_Shot_2018-08-13_at_7.13.57_PM.png)
 
@@ -121,7 +128,11 @@ Then we relaxed with a nice sunset view aboard the sundeck. And it just got more
 
 Then went for early sleep with clock set to wake me up at 5:30
 
+---
+
+
 ## Day 3
+
 
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180811_051242_HHT.jpg)
@@ -130,7 +141,10 @@ Then went for early sleep with clock set to wake me up at 5:30
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180811_063325.jpg)
 
-Had breakfast and went to Sung Sot cave (Surprising cave).
+Nice!!
+
+
+Had breakfast and then went to Sung Sot cave (Surprising cave).
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180811_083320_HHT.jpg)
 
@@ -148,11 +162,17 @@ But the view from the top of Titop hill (500ft) could've been even better but it
 
 After this, we went back to the cruise, checked out our cabins, had buffet brunch and dropped back at the harbor. Then the van took us back to our hotels.
 
-I checked in the same hotel and rented the bike one more time. Tried to go to any other places but just ended up finding Indian food and then just rest and TV at the hotel.
+I checked in the same hotel and rented the bike one more time. Tried to go to any other places but just ended up searching for Indian food and then just rest and TV at the hotel.
+
+
 
 ---
 
+
+
 ## Day 4
+
+
 
 Had breakfast at the hotel. Then had a facial at [Trendy Spa](https://www.tripadvisor.com.sg/Attraction_Review-g293924-d12925605-Reviews-Trendy_Spa_Massage-Hanoi.html), had lunch, returned the bike, checked out the hotel and used their taxi service to get back to the airport.
 
@@ -165,16 +185,30 @@ Loved the souvenirs in the airport but too expensive to buy.
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180812_141943.jpg)
 
-And finally reminded to try the famous Vietnamese coffee (no, definitely not the weasel one).
+And finally remembered to try the famous Vietnamese coffee (no, definitely not the weasel one).
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180812_145111.jpg)
+
+And then left for checkout before being hunted down by a Vietnamese family who told me I left my phone at the cafe itself. 😨
+
+Very good people! 🙏
 
 
 Overall this was a very good trip but too expensive to enjoy alone.
 
+
+And this guy was nowhere to be found 😢
+
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/1490705536Kong-Skull-Island-Vietnam.png)
+
+
+
 ---
 
+
 ### Lessons Learned
+
 
 * A guided tour is not a good idea for traveling alone but YMMV
 
@@ -188,7 +222,5 @@ Overall this was a very good trip but too expensive to enjoy alone.
 
 * Don't mistake 10k VND for 100kVND or the other way around when you buy anything. Check the notes carefully.
 
-* King Kong is just a fiction and doesn't really live in Halong Bay 😢
+* King Kong is just a fiction and doesn't really live in Halong Bay. Don't go there looking for him like me. 
 
-
-![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/1490705536Kong-Skull-Island-Vietnam.png)
