@@ -85,6 +85,8 @@ With a balcony! 😱😱😱
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180810_131541.jpg)
 
+But it's a good idea to stay 3D2N trip on such cabins.
+
 We started cruising towards Halong Bay.
 
 
@@ -128,9 +130,65 @@ Then went for early sleep with clock set to wake me up at 5:30
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180811_063325.jpg)
 
+Had breakfast and went to Sung Sot cave (Surprising cave).
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180811_083320_HHT.jpg)
+
+The view from atop the cave (100ft above) was very beautiful.
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180811_085128.jpg)
 
 
-This guy was nowhere in sight 😢
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180811_081502.jpg)
+
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/nice_view_atop_cave.png)
+
+But the view from the top of Titop hill (500ft) could've been even better but it was not part of Oasis Bay's itinerary.
+
+After this, we went back to the cruise, checked out our cabins, had buffet brunch and dropped back at the harbor. Then the van took us back to our hotels.
+
+I checked in the same hotel and rented the bike one more time. Tried to go to any other places but just ended up finding Indian food and then just rest and TV at the hotel.
+
+---
+
+## Day 4
+
+Had breakfast at the hotel. Then had a facial at [Trendy Spa](https://www.tripadvisor.com.sg/Attraction_Review-g293924-d12925605-Reviews-Trendy_Spa_Massage-Hanoi.html), had lunch, returned the bike, checked out the hotel and used their taxi service to get back to the airport.
+
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180812_132724.jpg)
+
+Again the roads reminiscent of those in Madurai :)
+
+Loved the souvenirs in the airport but too expensive to buy.
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180812_141943.jpg)
+
+And finally reminded to try the famous Vietnamese coffee (no, definitely not the weasel one).
+
+![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/IMG_20180812_145111.jpg)
+
+
+Overall this was a very good trip but too expensive to enjoy alone.
+
+---
+
+### Lessons Learned
+
+* A guided tour is not a good idea for traveling alone but YMMV
+
+* If you rent a bike, check if it is in good condition and take a photo of the license plate and the location of wherever you park if you leave it and go for a longer walk.
+
+* Riding solo requires you to stop often to check your maps
+
+* Remember to check the check out time of your hotels
+
+* Don't buy anything from the souvenir shop in the middle of hanoi - halong journey unless you are super rich.
+
+* Don't mistake 10k VND for 100kVND or the other way around when you buy anything. Check the notes carefully.
+
+* King Kong is just a fiction and doesn't really live in Halong Bay 😢
 
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/photos/2018_08_13_vietnam/1490705536Kong-Skull-Island-Vietnam.png)
