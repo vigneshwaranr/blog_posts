@@ -13,13 +13,13 @@ Let's get back to our curious monkey and elephant on their journey.
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level3.png)
 
-For any distributed system, it helps to do the following:
+For any distributed system, it helps to do the following to scale:
 
 * Understand the overview of its system architecture
 * Have a look at [every single configuration](https://kafka.apache.org/documentation/#producerconfigs) it has and spot what you can tune with safe assumptions at first and then keep tweating by experimenting with different values.
 * If still not helping, then it's time to do such deep diving to find where is the bottleneck.
 
-For Kafka, I found that these three are the main configurations we can tweak:
+For Kafka, I found it helpful to tweak these three configurations:
 
 * `batch.size`
   * Kafka can accumulate multiple records *of a particular topic-partition* in batches and send multiple batches together instead of sending individual records.
@@ -41,7 +41,7 @@ For Kafka, I found that these three are the main configurations we can tweak:
 
 Ok. This time I will explain with diagrams. I tried my best to lay out the RecordAccumulator architecture.
 
-#### But First A Quick Overview
+#### A Quick Overview
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/ProducerOverview.png)
 
@@ -102,11 +102,11 @@ The RecordAccumulator holds a [concurrent map](https://github.com/apache/kafka/b
 
 * I leave the possibilities of *Batch3*'s fate to your imagination.
 
-### Wow! A picture is truly worth 1000 words! We have become easily enlightened about Kafka!
+### Wow! A picture is truly worth 1000 words! Now we can tweak these configurations with this understanding!
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level5.png)
 
-Great! Now that we understand how these configurations affect the Producer, we just need to keep the following things in mind if you need to scale.
+Great! Just need to keep the following things in mind whenever you need to scale.
 
 * Measure how long it takes for your messages to be delivered between producer and consumer. If latency is negligible, you don't need to worry much.
 
