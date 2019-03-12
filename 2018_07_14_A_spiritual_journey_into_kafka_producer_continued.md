@@ -118,7 +118,8 @@ Great! It would also help to note the following learnings.
 
 ---
 
-P.S. Influences for this extravagant style of this article comes from the following :)
+P.S. Influences for the extravagant style of this article come from the following :)
+
 * [Head First Design Patterns](https://amzn.to/2EXaJ8N)
 * [Why's (poignant) guide to ruby](https://poignant.guide/)
 * [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
