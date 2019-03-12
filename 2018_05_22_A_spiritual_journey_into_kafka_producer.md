@@ -2,13 +2,13 @@
 
 Hi. In this post, I am going to walk you through the Kafka Producer source code and share my knowledge on the Producer Architecture.
 
-I couldn’t find any such article about Kafka Producer Architecture till date and wanted to post one myself for a long time but 
+I couldn’t find any such article about Kafka Producer Architecture till date and wanted to post one myself for a long time but
 a recent tech discussion about Kafka at my workplace triggered the motivation to write this.
 
-**Note**: I'm going to focus only on internal implementation of Kafka Producer so if you have no idea about what is Kafka at all, 
+**Note**: I'm going to focus only on internal implementation of Kafka Producer so if you have no idea about what is Kafka at all,
 this article is **not for you**! You might want to start here -> https://kafka.apache.org/intro
 
-This article is for those who are already familiar with Kafka and doesn't mind digging into the details. 
+This article is for those who are already familiar with Kafka and doesn't mind digging into the details.
 
 I’ll be referring Kafka Producer v1.1 (only the idempotent producer mode) for this article.
 
@@ -37,7 +37,7 @@ A brief overview about the essential components:
   * batching time specified by *linger.ms* is elapsed, or
   * configured *batch.size* is reached even before *linger.ms* is elapsed.
 
-  
+
 * *[ProducerBatch](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/ProducerBatch.java)* - Uses a *[MemoryRecordsBuilder](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/common/record/MemoryRecordsBuilder.java)* to handle compression and write the records into a *ByteBuffer* borrowed from the *BufferPool* in *RecordAccumulator*
 
 **Section C**
@@ -70,8 +70,8 @@ What I listed above covers almost everything to start digging yourself. But if y
 * Then it finds out which partition of the topic this data should go to.
   * If the partition id is explicitly specified, it is used.
   * Otherwise if your custom partitioner is configured, that is used to find the partition id.
-  * If one is not configured, the *[default partitioner](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/DefaultPartitioner.java#L54)* is used. 
-    - If a key is provided, the partition will be chosen by the default partitioner based on hashing the key. (Note that if the keys are not evenly distributed, skewing can happen where some partitions receive more data than others). 
+  * If one is not configured, the *[default partitioner](https://github.com/apache/kafka/blob/1.1/clients/src/main/java/org/apache/kafka/clients/producer/internals/DefaultPartitioner.java#L54)* is used.
+    - If a key is provided, the partition will be chosen by the default partitioner based on hashing the key. (Note that if the keys are not evenly distributed, skewing can happen where some partitions receive more data than others).
     - If a key is not provided, the default partitioner chooses one among the partitions in a round robin manner.
 
 * Now that it knows which partition to send the data to, it creates the *TopicPartition* POJO.
@@ -86,4 +86,4 @@ What I listed above covers almost everything to start digging yourself. But if y
 
 ![image](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/A_spiritual_journey_into_kafka_producer/Level3.png)
 
-We shall discuss about that and how to configure *batch.size* and *linger.ms* on different situations. Stay tuned!
+We shall discuss about that and how to configure *batch.size* and *linger.ms* on different situations. [Come jump over here](http://blog.vigneshwaran.in/post/183402689371/digging-further-into-kafkaproducer-tuning)
