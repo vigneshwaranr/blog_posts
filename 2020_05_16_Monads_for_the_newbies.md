@@ -1,6 +1,6 @@
-## Intro to Monad
-
 **Intended audience:** People who come from Java background and just starting to explore Scala/FP and wanna learn what's a Monad in simplest way possible.
+
+## Intro to Monad
 
 There are plenty of articles in the Internet about Monads but nothing is simple enough to understand for such specific set of audience I mentioned above (like the past me several years back and like my newly joined colleagues).
 
