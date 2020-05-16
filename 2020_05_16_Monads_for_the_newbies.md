@@ -152,7 +152,7 @@ def divide1(a: Int, b: Int): MaybeDivideable = {
 Bit ugly, yes. But this is just to show the equivalent of the following haskell example in the video.
 
 
-![sum of squares](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/Monads_for_the_newbies/hutton1.png)
+![hutton1](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/Monads_for_the_newbies/hutton1.png)
 
 And this was using only the apply and get methods. Let's try to take advantage of the flatMap method.
 
@@ -172,7 +172,7 @@ Doesn't look like the previous horrible one.
 
 Mr. Hutton's Haskell example:
 
-![sum of squares](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/Monads_for_the_newbies/hutton2.png)
+![hutton2](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/Monads_for_the_newbies/hutton2.png)
 
 
 Still when you have loads of nesting, it may not look good. For-comprehensions is there to help us!
@@ -223,5 +223,15 @@ def divide3(a: Int, b: Int): MaybeDivideable = {
 
 Equivalent thing in haskell is called the do-notation:
 
+![hutton3](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/Monads_for_the_newbies/hutton3.png)
 
 
+So in this two part blog post, we have seen what are Monads and how to create one ourselves and use them. Hope it was useful for someone and please share some feedbacks.
+
+
+Again, don't forget to watch this video (Professor Graham Hutton) if you are into Haskell as well -> https://www.youtube.com/watch?v=t1e8gqXLbsU
+
+
+If you are college student, check out this video as well in which Professor Harold Abelson (one of the authors of SICP book) teaching the chapter "Compound data" (he never uses the word monads but the concepts are similar) -> https://www.youtube.com/watch?v=DrFkf-T-6Co&list=PLE18841CABEA24090&index=4
+
+Thank you for patiently reading until here. :)
