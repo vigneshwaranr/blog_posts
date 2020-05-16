@@ -1,4 +1,4 @@
-Hi. There are plenty of articles in the Internet about Monads but nothing is simple enough to understand for a specific set of audience who used to predominantly written imperative Java methods and has just moving to FP especially Scala (like the past me several years back).
+Hi. There are plenty of articles in the Internet about Monads but nothing is simple enough to understand for a specific set of audience who used to predominantly written imperative Java methods and has just moving to FP especially Scala (like the past me several years back and like my newly joined colleagues).
 
 So in this article I try to explain Monads in a way that is easily understandable for them. If you already know what is a Monad, then don't read this and judge. 
 
@@ -134,9 +134,6 @@ This is all it took to create my monad. Now my divide method will look like this
 
 ```
 def divide1(a: Int, b: Int): MaybeDivideable = {
-  val aMayBe = MaybeDivideable(a)
-  val bMayBe = MaybeDivideable(b)
-
   MaybeDivideable(a) match {
     case UnDivideable =>
       UnDivideable
@@ -154,6 +151,25 @@ def divide1(a: Int, b: Int): MaybeDivideable = {
 Bit ugly, yes. But this is just to show the equivalent of the following haskell example in the video.
 
 
+![sum of squares](https://raw.githubusercontent.com/vigneshwaranr/blog_posts/master/screenshots/Monads_for_the_newbies/hutton1.png)
+
+And this was using only the apply and get methods. Let's try to take advantage of the flatMap method.
+
+```
+def divide2(a: Int, b: Int): MaybeDivideable = {
+  val aMayBe = MaybeDivideable(a)
+  val bMayBe = MaybeDivideable(b)
+  aMayBe.flatMap { x =>
+    bMayBe.flatMap { y =>
+      MaybeDivideable(x / y)
+    }
+  }
+}
+```
+
+Doesn't look like the previous horrible one.
+
+Mr. Hutton's Haskell example:
 
 
 
